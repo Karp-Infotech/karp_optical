@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-09-27 06:41:11.351611",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "qc_done_by",
+  "qa_result",
+  "comment",
+  "sales_order"
+ ],
+ "fields": [
+  {
+   "fieldname": "qc_done_by",
+   "fieldtype": "Link",
+   "label": "QC Done By",
+   "options": "User"
+  },
+  {
+   "fieldname": "qa_result",
+   "fieldtype": "Select",
+   "label": "QA Result",
+   "options": "Passed\nFailed"
+  },
+  {
+   "fieldname": "comment",
+   "fieldtype": "Text",
+   "label": "Comment"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-27 06:48:00.785455",
+ "modified_by": "Administrator",
+ "module": "Karp Optical",
+ "name": "Quality Control",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
