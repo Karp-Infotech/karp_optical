@@ -15,7 +15,7 @@
    "fieldname": "qc_done_by",
    "fieldtype": "Link",
    "label": "QC Done By",
-   "options": "User"
+   "options": "Employee"
   },
   {
    "fieldname": "qa_result",
@@ -37,7 +37,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-27 06:48:00.785455",
+ "modified": "2024-09-27 08:57:10.145083",
  "modified_by": "Administrator",
  "module": "Karp Optical",
  "name": "Quality Control",
