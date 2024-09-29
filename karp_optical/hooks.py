@@ -242,3 +242,12 @@ app_license = "unlicense"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {
+        "doctype": "Report",
+        "filters": [
+            ["is_standard", "=", "No"]  # Export only custom reports (not standard ones)
+        ]
+    }
+]
+
