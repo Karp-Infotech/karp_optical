@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-10-01 17:25:17.973046",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "location",
+  "date",
+  "status",
+  "store_association",
+  "outreach_wa_template"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "default": "In Planning",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "In Planning\nFinished\nOutreach\nClosed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "store_association",
+   "fieldtype": "Link",
+   "label": "Store Association",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "outreach_wa_template",
+   "fieldtype": "Link",
+   "label": "Outreach WA Template",
+   "options": "WA Template"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-01 20:30:31.211276",
+ "modified_by": "Administrator",
+ "module": "Karp Optical",
+ "name": "Eye Camp",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "name1"
+}
