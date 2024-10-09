@@ -8,7 +8,8 @@
   "date",
   "handover_amount",
   "handover_by",
-  "handover_to"
+  "handover_to",
+  "comments"
  ],
  "fields": [
   {
@@ -45,11 +46,17 @@
    "label": "Handover To",
    "options": "Employee",
    "reqd": 1
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Text",
+   "label": "Comments",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-28 08:54:01.084319",
+ "modified": "2024-10-09 21:18:01.927361",
  "modified_by": "Administrator",
  "module": "Karp Optical",
  "name": "Cash Handover",
