@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-10-10 07:40:04.491675",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sales_order",
+  "subject",
+  "status",
+  "prioirty",
+  "complaint_type",
+  "handled_by",
+  "resolution",
+  "comments"
+ ],
+ "fields": [
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Subject",
+   "reqd": 1
+  },
+  {
+   "fieldname": "prioirty",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Prioirty",
+   "options": "High\nMedium\nLow",
+   "reqd": 1
+  },
+  {
+   "fieldname": "complaint_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Complaint Type",
+   "options": "Frame Breakage\nLense Coating Peal\nFrame Color Peal\nUnclear Vision\nHeadache\nHigh Price\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "handled_by",
+   "fieldtype": "Link",
+   "label": "Handled By",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "resolution",
+   "fieldtype": "Select",
+   "label": "Resolution",
+   "options": "Frame Replacement\nLense Replacement\nReturn & Refund\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Text",
+   "label": "Comments"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nResolved\nOn Hold\nClosed",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-10 07:55:51.558038",
+ "modified_by": "Administrator",
+ "module": "Karp Optical",
+ "name": "Customer Complaints",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "subject"
+}
