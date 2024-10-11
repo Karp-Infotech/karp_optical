@@ -45,7 +45,7 @@ def gnerate_payment_entry(doc, method):
         "received_amount": doc.get("custom_advanced_payment"),
         "target_exchange_rate": 1,
         "source_exchange_rate": 1,
-        "reference_no": "1234"
+        "reference_no": doc.custom_transaction_id
     })
 
     # Append the Sales Order reference correctly
