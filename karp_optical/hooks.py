@@ -147,7 +147,10 @@ app_license = "unlicense"
 
 doc_events = {
     "Sales Order": {
-        "on_submit": "karp_optical.sales_order.sync_store_to_customer"
+        "on_submit": [
+            "karp_optical.sales_order.sync_store_to_customer",
+             "karp_optical.sales_order.gnerate_connected_documents"
+        ]
     },
     "Payment Entry": {
         "before_save": "karp_optical.payment_entry.copy_warehouse_from_sales_order"
