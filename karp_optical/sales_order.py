@@ -27,7 +27,7 @@ def gnerate_payment_entry(doc, method):
         
     # Fetch customer details from the sales order
     customer = doc.customer
-    posting_date = frappe.utils.nowdate()
+    posting_date = doc.transaction_date
 
     # Create a Payment Entry (advance payment for the Sales Order)
     payment_entry = frappe.get_doc({
@@ -81,28 +81,26 @@ def gnerate_sales_invoices(doc, method):
     # Set fields from the Sales Order
     sales_invoice.customer = doc.customer
     sales_invoice.company = doc.company
+    # Transfer items from Sales Order to Sales Invoice
     for item in doc.items:
-        # Assuming item.item_code exists
-
-        # Now you can set this rate in your sales invoice item
-        sales_invoice.append('items', {
-            'item_code': item.item_code,
-            'qty': item.qty,
-            'rate': item.rate,  # You can set the incoming_rate here if needed
-            # Set other fields as necessary
+        sales_invoice.append("items", {
+            "item_code": item.item_code,
+            "item_name": item.item_name,
+            "description": item.description,
+            "uom": item.uom,
+            "qty": item.qty,
+            "rate": item.rate,
+            "warehouse": item.warehouse,
+            "sales_order": doc.name,  # Link to Sales Order
+            "so_detail": item.name  # Reference to Sales Order Item
         })
 
     # Optionally, set other fields
     sales_invoice.set_posting_time = 1
-    sales_invoice.posting_date = frappe.utils.nowdate()
+    sales_invoice.posting_date = doc.transaction_date
+    sales_invoice.sales_order = doc
 
-    # Append reference to the Sales Order
-    sales_invoice.append('references', {
-        'reference_doctype': 'Sales Order',
-        'reference_name': doc.name,
-        'due_date': doc.delivery_date,
-        'total_amount': doc.grand_total
-    })
+
 
     # Save the Sales Invoice
     sales_invoice.insert(ignore_permissions=True)
@@ -111,9 +109,50 @@ def gnerate_sales_invoices(doc, method):
     frappe.msgprint(f"Sales Invoice {sales_invoice.name} has been created for Sales Order {doc.name}")
 
 
+def gnerate_delivery_note(doc, method):
+    # Create a new Delivery Note document
+    delivery_note = frappe.get_doc({
+        "doctype": "Delivery Note",
+        "customer": doc.customer,
+        "posting_date": doc.transaction_date,
+        "company": doc.company,
+        "set_warehouse": doc.set_warehouse,
+        "items": []
+    })
+
+    # Iterate over Sales Order items and add them to the Delivery Note
+    for item in doc.items:
+        delivery_note.append("items", {
+            "item_code": item.item_code,
+            "item_name": item.item_name,
+            "description": item.description,
+            "qty": item.qty,  # Use qty from Sales Order
+            "rate": item.rate,
+            "uom": item.uom,
+            "warehouse": item.warehouse,
+            "against_sales_order": doc.name,  # Link to Sales Order
+            "so_detail": item.name,  # Link the specific Sales Order item
+        })
+
+    # Insert the Delivery Note document into the database
+    delivery_note.insert(ignore_permissions=True)
+
+    # Submit the Delivery Note to complete the transaction
+    delivery_note.submit()
+
+# def mark_sales_order_as_complete(sales_order_name):
+#     sales_order = frappe.get_doc('Sales Order', sales_order_name)
+#     sales_order.status = 'Completed'
+#     sales_order.save(ignore_permissions=True)
+#     # Commit the changes to the database
+#     frappe.db.commit()
+#     frappe.msgprint(f"Sales Order {sales_order.name} has been marked as Completed.")
+   
 def gnerate_connected_documents(doc, method):
     gnerate_payment_entry(doc, method)
-    # print("Generate Sales Invoice: ")
-    # print(doc.custom_generate_invoice)
-    # if doc.custom_generate_invoice :
-    #     gnerate_sales_invoices(doc, method)
+    print("Generate Sales Invoice: ")
+    print(doc.custom_generate_invoice)
+    if doc.custom_generate_invoice :
+        gnerate_delivery_note(doc, method)
+        gnerate_sales_invoices(doc, method)
+        #mark_sales_order_as_complete(doc.name)
