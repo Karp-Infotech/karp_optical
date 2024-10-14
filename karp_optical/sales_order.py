@@ -99,6 +99,7 @@ def gnerate_sales_invoices(doc, method):
     sales_invoice.set_posting_time = 1
     sales_invoice.posting_date = doc.transaction_date
     sales_invoice.sales_order = doc
+    sales_invoice.set_warehouse = doc.set_warehouse
 
 
 
