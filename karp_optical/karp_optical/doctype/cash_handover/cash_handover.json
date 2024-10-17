@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "date",
+  "store",
   "handover_amount",
   "handover_by",
   "handover_to",
@@ -52,11 +53,18 @@
    "fieldtype": "Text",
    "label": "Comments",
    "reqd": 1
+  },
+  {
+   "fieldname": "store",
+   "fieldtype": "Link",
+   "label": "Store",
+   "options": "Warehouse",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-09 21:18:01.927361",
+ "modified": "2024-10-17 20:42:08.876994",
  "modified_by": "Administrator",
  "module": "Karp Optical",
  "name": "Cash Handover",
