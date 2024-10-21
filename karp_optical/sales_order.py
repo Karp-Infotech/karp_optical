@@ -1,4 +1,5 @@
 import frappe
+from datetime import date
 
 def sync_store_to_customer(doc, method):
     # Get the customer linked to the sales order
@@ -6,6 +7,8 @@ def sync_store_to_customer(doc, method):
 
     # Set the warehouse field in the Customer doctype based on the Sales Order warehouse
     customer.custom_store_association = doc.set_warehouse
+
+    customer.custom_last_visited = date.today()
     
     # Save the customer record
     customer.save()
