@@ -69,6 +69,7 @@
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Open\nResolved\nOn Hold\nClosed",
    "reqd": 1
@@ -82,7 +83,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-10 12:33:23.754160",
+ "modified": "2024-11-18 10:01:51.176486",
  "modified_by": "Administrator",
  "module": "Karp Optical",
  "name": "Customer Complaints",
