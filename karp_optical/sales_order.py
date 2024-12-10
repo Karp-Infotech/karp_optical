@@ -160,3 +160,34 @@ def gnerate_connected_documents(doc, method):
         gnerate_delivery_note(doc, method)
         gnerate_sales_invoices(doc, method)
         #mark_sales_order_as_complete(doc.name)
+
+
+def check_stock_availability(doc, method):
+    """
+    Validate that there is sufficient stock in the selected warehouse
+    for each item in the Sales Order before submission.
+    """
+    for item in doc.items:
+        if item.warehouse:
+            # Fetch the actual quantity available in the warehouse
+            actual_qty = frappe.db.get_value(
+                "Bin",
+                {"item_code": item.item_code, "warehouse": item.warehouse},
+                "actual_qty"
+            )
+
+            # Default actual_qty to 0 if no Bin entry exists
+            actual_qty = actual_qty or 0
+
+            # Check if available stock is less than required quantity
+            if actual_qty < item.qty:
+                frappe.throw(
+                    (
+                        "Insufficient stock for Item <b>{0}</b> in Warehouse <b>{1}</b>. "
+                        "Available: <b>{2}</b>, Required: <b>{3}</b>"
+                    ).format(item.item_code, item.warehouse, actual_qty, item.qty)
+                )
+        else:
+            frappe.throw(
+                ("Warehouse is mandatory for Item <b>{0}</b>. Please select a warehouse.").format(item.item_code)
+            )

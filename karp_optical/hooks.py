@@ -150,7 +150,8 @@ doc_events = {
         "on_submit": [
             "karp_optical.sales_order.sync_store_to_customer",
              "karp_optical.sales_order.gnerate_connected_documents"
-        ]
+        ],
+         "validate": "karp_optical.sales_order.check_stock_availability"
     },
     "Payment Entry": {
         "before_save": "karp_optical.payment_entry.copy_warehouse_from_sales_order"
