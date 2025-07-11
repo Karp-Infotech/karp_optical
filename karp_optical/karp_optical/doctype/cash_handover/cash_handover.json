@@ -33,6 +33,7 @@
   {
    "fieldname": "handover_by",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Handover By",
@@ -42,6 +43,7 @@
   {
    "fieldname": "handover_to",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Handover To",
@@ -64,7 +66,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-17 20:42:08.876994",
+ "modified": "2025-07-11 19:16:20.056250",
  "modified_by": "Administrator",
  "module": "Karp Optical",
  "name": "Cash Handover",
