@@ -1,0 +1,92 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "question-sign",
+  "modified": "2024-09-03 09:35:07.032053",
+  "name": "Pending",
+  "style": "",
+  "workflow_state_name": "Pending"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "ok-sign",
+  "modified": "2024-09-03 09:35:07.033166",
+  "name": "Approved",
+  "style": "Success",
+  "workflow_state_name": "Approved"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "remove",
+  "modified": "2024-09-03 09:35:07.033785",
+  "name": "Rejected",
+  "style": "Danger",
+  "workflow_state_name": "Rejected"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-11 13:05:14.424329",
+  "name": "Fitting Inprogress",
+  "style": "",
+  "workflow_state_name": "Fitting Inprogress"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-11 13:16:56.669920",
+  "name": "Delivered",
+  "style": "",
+  "workflow_state_name": "Delivered"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-11 13:16:12.044604",
+  "name": "Out for Delivery",
+  "style": "",
+  "workflow_state_name": "Out for Delivery"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-11 13:08:06.679093",
+  "name": "Fitting Complete",
+  "style": "",
+  "workflow_state_name": "Fitting Complete"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-11 10:27:11.597722",
+  "name": "Ready for Pickup",
+  "style": "",
+  "workflow_state_name": "Ready for Pickup"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-11 10:27:34.004520",
+  "name": "Ready for Fitting",
+  "style": "",
+  "workflow_state_name": "Ready for Fitting"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-11 10:25:59.472948",
+  "name": "Order Placed",
+  "style": "",
+  "workflow_state_name": "Order Placed"
+ }
+]

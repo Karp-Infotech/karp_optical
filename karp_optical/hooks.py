@@ -265,6 +265,7 @@ fixtures = [
         "filters": [
             ["is_standard", "=", "No"]  # Export only custom reports (not standard ones)
         ]
-    }
+    },
+    "Workflow", "Workflow State", "Workflow Action Master"
 ]
 

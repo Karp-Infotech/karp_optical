@@ -1,0 +1,58 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2024-09-03 09:35:07.040289",
+  "name": "Approve",
+  "workflow_action_name": "Approve"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2024-09-03 09:35:07.040893",
+  "name": "Reject",
+  "workflow_action_name": "Reject"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2024-09-03 09:35:07.041212",
+  "name": "Review",
+  "workflow_action_name": "Review"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-11 13:15:54.205402",
+  "name": "Deliver",
+  "workflow_action_name": "Deliver"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-11 13:16:44.553402",
+  "name": "Handover",
+  "workflow_action_name": "Handover"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-11 13:08:32.546264",
+  "name": "Perform Fitting",
+  "workflow_action_name": "Perform Fitting"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-11 13:00:53.916652",
+  "name": "Pickup from Store",
+  "workflow_action_name": "Pickup from Store"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-11 13:03:05.204551",
+  "name": "Send to Lab",
+  "workflow_action_name": "Send to Lab"
+ }
+]

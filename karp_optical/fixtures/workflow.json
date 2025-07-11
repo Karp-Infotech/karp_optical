@@ -1,0 +1,157 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow",
+  "document_type": "Sales Order",
+  "is_active": 1,
+  "modified": "2025-07-11 14:03:46.003349",
+  "name": "KK-SO-WF",
+  "override_status": 0,
+  "send_email_alert": 0,
+  "states": [
+   {
+    "allow_edit": "All",
+    "avoid_status_override": 0,
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "state": "Order Placed",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": "1"
+   },
+   {
+    "allow_edit": "All",
+    "avoid_status_override": 0,
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "state": "Ready for Pickup",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": "2"
+   },
+   {
+    "allow_edit": "All",
+    "avoid_status_override": 0,
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "state": "Ready for Fitting",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": "3"
+   },
+   {
+    "allow_edit": "All",
+    "avoid_status_override": 0,
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "state": "Fitting Inprogress",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": "4"
+   },
+   {
+    "allow_edit": "All",
+    "avoid_status_override": 0,
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "state": "Fitting Complete",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": "5"
+   },
+   {
+    "allow_edit": "All",
+    "avoid_status_override": 0,
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "state": "Out for Delivery",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": "6"
+   },
+   {
+    "allow_edit": "All",
+    "avoid_status_override": 0,
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "state": "Delivered",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": "7"
+   }
+  ],
+  "transitions": [
+   {
+    "action": "Pickup from Store",
+    "allow_self_approval": 1,
+    "allowed": "All",
+    "condition": null,
+    "next_state": "Ready for Pickup",
+    "state": "Order Placed",
+    "workflow_builder_id": "action-1"
+   },
+   {
+    "action": "Send to Lab",
+    "allow_self_approval": 1,
+    "allowed": "All",
+    "condition": null,
+    "next_state": "Ready for Fitting",
+    "state": "Order Placed",
+    "workflow_builder_id": "action-2"
+   },
+   {
+    "action": "Send to Lab",
+    "allow_self_approval": 1,
+    "allowed": "All",
+    "condition": null,
+    "next_state": "Ready for Fitting",
+    "state": "Ready for Pickup",
+    "workflow_builder_id": "action-3"
+   },
+   {
+    "action": "Perform Fitting",
+    "allow_self_approval": 1,
+    "allowed": "All",
+    "condition": null,
+    "next_state": "Fitting Complete",
+    "state": "Ready for Fitting",
+    "workflow_builder_id": null
+   },
+   {
+    "action": "Deliver",
+    "allow_self_approval": 1,
+    "allowed": "All",
+    "condition": null,
+    "next_state": "Out for Delivery",
+    "state": "Fitting Complete",
+    "workflow_builder_id": null
+   },
+   {
+    "action": "Handover",
+    "allow_self_approval": 1,
+    "allowed": "All",
+    "condition": null,
+    "next_state": "Delivered",
+    "state": "Out for Delivery",
+    "workflow_builder_id": null
+   }
+  ],
+  "workflow_data": "[{\"type\":\"state\",\"dimensions\":{\"width\":139,\"height\":53},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":66.047607421875,\"y\":-11.086669921875,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":143.18182373046875,\"y\":22.90838623046875,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":66.047607421875,\"y\":56.9034423828125,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11.08660888671875,\"y\":22.90838623046875,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":267.77984619140625,\"y\":484.2193908691406,\"z\":0},\"id\":\"1\",\"position\":{\"x\":267.77984619140625,\"y\":484.2193908691406}},{\"type\":\"state\",\"dimensions\":{\"width\":162,\"height\":74},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":77.41119384765625,\"y\":-11.086654663085938,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":165.9090576171875,\"y\":33.405548095703125,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":77.41119384765625,\"y\":77.89773559570312,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11.086639404296875,\"y\":33.405548095703125,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":169.33594801898175,\"y\":120.77280330756457,\"z\":0},\"id\":\"2\",\"position\":{\"x\":169.33594801898175,\"y\":120.77280330756457}},{\"type\":\"state\",\"dimensions\":{\"width\":162,\"height\":74},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":77.4112548828125,\"y\":-11.086654663085938,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":165.9090576171875,\"y\":33.40553283691406,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":77.4112548828125,\"y\":77.89772033691406,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11.08660888671875,\"y\":33.40553283691406,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":544.5058489820952,\"y\":124.86094474989477,\"z\":0},\"id\":\"3\",\"position\":{\"x\":544.5058489820952,\"y\":124.86094474989477}},{\"type\":\"state\",\"dimensions\":{\"width\":162,\"height\":74},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":77.4111328125,\"y\":-11.086639404296875,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":165.9090576171875,\"y\":33.40553283691406,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":77.4111328125,\"y\":77.89772033691406,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11.086669921875,\"y\":33.40553283691406,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":793.6535220863857,\"y\":130.45919582637657,\"z\":0},\"id\":\"4\",\"position\":{\"x\":793.6535220863857,\"y\":130.45919582637657}},{\"type\":\"state\",\"dimensions\":{\"width\":162,\"height\":74},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":77.4112548828125,\"y\":-11.086669921875,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":165.9091796875,\"y\":33.405517578125,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":77.4112548828125,\"y\":77.89767456054688,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11.086669921875,\"y\":33.405517578125,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":1015.7798461914062,\"y\":140.68466186523438,\"z\":0},\"id\":\"5\",\"position\":{\"x\":1015.7798461914062,\"y\":140.68466186523438}},{\"type\":\"state\",\"dimensions\":{\"width\":157,\"height\":53},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":75.0106201171875,\"y\":-11.086639404296875,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":161.10791015625,\"y\":22.90838623046875,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":75.0106201171875,\"y\":56.903411865234375,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11.086669921875,\"y\":22.90838623046875,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":1025.7798461914062,\"y\":298.6846618652344,\"z\":0},\"id\":\"6\",\"position\":{\"x\":1025.7798461914062,\"y\":298.6846618652344}},{\"type\":\"state\",\"dimensions\":{\"width\":115,\"height\":53},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":54.016357421875,\"y\":-11.086669921875,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":119.119384765625,\"y\":22.90838623046875,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":54.016357421875,\"y\":56.90338134765625,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11.086669921875,\"y\":22.90838623046875,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":1052.7798461914062,\"y\":422.6846618652344,\"z\":0},\"id\":\"7\",\"position\":{\"x\":1052.7798461914062,\"y\":422.6846618652344}},{\"type\":\"action\",\"dimensions\":{\"width\":142,\"height\":33},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":67.86932373046875,\"y\":-2.08807373046875,\"width\":6,\"height\":6},{\"id\":\"right\",\"position\":\"right\",\"x\":137.83380126953125,\"y\":13.409088134765625,\"width\":6,\"height\":6},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":67.86932373046875,\"y\":28.90625,\"width\":6,\"height\":6},{\"id\":\"left\",\"position\":\"left\",\"x\":-2.08807373046875,\"y\":13.409088134765625,\"width\":6,\"height\":6}]},\"computedPosition\":{\"x\":239.52984619140625,\"y\":344.6846618652344,\"z\":0},\"id\":\"action-1\",\"position\":{\"x\":239.52984619140625,\"y\":344.6846618652344},\"data\":{\"from_id\":\"1\",\"to_id\":\"2\"}},{\"type\":\"action\",\"dimensions\":{\"width\":102,\"height\":33},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":47.75567626953125,\"y\":-2.08807373046875,\"width\":6,\"height\":6},{\"id\":\"right\",\"position\":\"right\",\"x\":97.60650634765625,\"y\":13.40911865234375,\"width\":6,\"height\":6},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":47.75567626953125,\"y\":28.90625,\"width\":6,\"height\":6},{\"id\":\"left\",\"position\":\"left\",\"x\":-2.08807373046875,\"y\":13.40911865234375,\"width\":6,\"height\":6}]},\"computedPosition\":{\"x\":440.89284758675075,\"y\":494.2193908691406,\"z\":0},\"id\":\"action-2\",\"position\":{\"x\":440.89284758675075,\"y\":494.2193908691406},\"data\":{\"from_id\":\"1\",\"to_id\":\"3\"}},{\"type\":\"action\",\"dimensions\":{\"width\":102,\"height\":33},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":47.7557373046875,\"y\":-2.0880584716796875,\"width\":6,\"height\":6},{\"id\":\"right\",\"position\":\"right\",\"x\":97.6065673828125,\"y\":13.409088134765625,\"width\":6,\"height\":6},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":47.7557373046875,\"y\":28.90625,\"width\":6,\"height\":6},{\"id\":\"left\",\"position\":\"left\",\"x\":-2.0880126953125,\"y\":13.409088134765625,\"width\":6,\"height\":6}]},\"computedPosition\":{\"x\":397.4208985005385,\"y\":141.27280330756457,\"z\":0},\"id\":\"action-3\",\"position\":{\"x\":397.4208985005385,\"y\":141.27280330756457},\"data\":{\"from_id\":\"2\",\"to_id\":\"3\"}},{\"sourceHandle\":\"left\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"1\",\"target\":\"action-1\",\"updatable\":true,\"animated\":true,\"id\":\"vueflow__edge-1left-action-1left\",\"sourceX\":256.6932373046875,\"sourceY\":510.6277770996094,\"targetX\":237.4417724609375,\"targetY\":361.09375},{\"sourceHandle\":\"right\",\"targetHandle\":\"bottom\",\"type\":\"transition\",\"source\":\"action-1\",\"target\":\"2\",\"updatable\":true,\"animated\":true,\"id\":\"vueflow__edge-action-1right-2bottom\",\"sourceX\":383.3636474609375,\"sourceY\":361.09375,\"targetX\":250.247141866638,\"targetY\":205.6705389032677,\"markerEnd\":{\"type\":\"arrow\",\"width\":15,\"height\":15,\"strokeWidth\":1.5,\"color\":\"#687178\"}},{\"sourceHandle\":\"right\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"1\",\"target\":\"action-2\",\"updatable\":true,\"animated\":true,\"id\":\"vueflow__edge-1right-action-2left\",\"sourceX\":417.961669921875,\"sourceY\":510.6277770996094,\"targetX\":438.804773856282,\"targetY\":510.6285095214844},{\"sourceHandle\":\"right\",\"targetHandle\":\"bottom\",\"type\":\"transition\",\"source\":\"action-2\",\"target\":\"3\",\"updatable\":true,\"animated\":true,\"id\":\"vueflow__edge-action-2right-3bottom\",\"sourceX\":544.499353934407,\"sourceY\":510.6285095214844,\"targetX\":625.4171038649077,\"targetY\":209.75866508680883,\"markerEnd\":{\"type\":\"arrow\",\"width\":15,\"height\":15,\"strokeWidth\":1.5,\"color\":\"#687178\"}},{\"sourceHandle\":\"top\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"2\",\"target\":\"action-3\",\"updatable\":true,\"animated\":true,\"id\":\"vueflow__edge-2top-action-3left\",\"sourceX\":250.247141866638,\"sourceY\":109.68614864447864,\"targetX\":395.332885805226,\"targetY\":157.6818914423302},{\"sourceHandle\":\"right\",\"targetHandle\":\"top\",\"type\":\"transition\",\"source\":\"action-3\",\"target\":\"3\",\"updatable\":true,\"animated\":true,\"id\":\"vueflow__edge-action-3right-3top\",\"sourceX\":501.027465883351,\"sourceY\":157.6818914423302,\"targetX\":625.4171038649077,\"targetY\":113.77429008680883,\"markerEnd\":{\"type\":\"arrow\",\"width\":15,\"height\":15,\"strokeWidth\":1.5,\"color\":\"#687178\"}}]",
+  "workflow_name": "KK-SO-WF",
+  "workflow_state_field": "workflow_state"
+ }
+]
