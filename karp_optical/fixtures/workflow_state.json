@@ -30,10 +30,37 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2025-07-15 09:58:04.962949",
-  "name": "Draft",
+  "modified": "2025-07-15 11:35:32.952526",
+  "name": "Payment Received",
   "style": "",
-  "workflow_state_name": "Draft"
+  "workflow_state_name": "Payment Received"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-15 11:30:43.057404",
+  "name": "Ready For KK Payment",
+  "style": "",
+  "workflow_state_name": "Ready For KK Payment"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-15 11:33:57.866914",
+  "name": "KK Payment Sent",
+  "style": "",
+  "workflow_state_name": "KK Payment Sent"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-15 11:43:33.588583",
+  "name": "KK Payment Verified",
+  "style": "",
+  "workflow_state_name": "KK Payment Verified"
  },
  {
   "docstatus": 0,
@@ -43,6 +70,15 @@
   "name": "Fitting Inprogress",
   "style": "",
   "workflow_state_name": "Fitting Inprogress"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-07-15 09:58:04.962949",
+  "name": "Draft",
+  "style": "",
+  "workflow_state_name": "Draft"
  },
  {
   "docstatus": 0,
@@ -84,18 +120,18 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2025-07-11 10:27:34.004520",
-  "name": "Ready for Fitting",
+  "modified": "2025-07-11 10:25:59.472948",
+  "name": "Order Placed",
   "style": "",
-  "workflow_state_name": "Ready for Fitting"
+  "workflow_state_name": "Order Placed"
  },
  {
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2025-07-11 10:25:59.472948",
-  "name": "Order Placed",
+  "modified": "2025-07-11 10:27:34.004520",
+  "name": "Ready for Fitting",
   "style": "",
-  "workflow_state_name": "Order Placed"
+  "workflow_state_name": "Ready for Fitting"
  }
 ]

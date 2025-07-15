@@ -23,6 +23,27 @@
  {
   "docstatus": 0,
   "doctype": "Workflow Action Master",
+  "modified": "2025-07-15 12:21:12.293471",
+  "name": "Reject Payment",
+  "workflow_action_name": "Reject Payment"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-15 11:38:36.316333",
+  "name": "Make Payment",
+  "workflow_action_name": "Make Payment"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-15 11:44:34.534137",
+  "name": "Verify Payment",
+  "workflow_action_name": "Verify Payment"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
   "modified": "2025-07-15 09:58:39.382300",
   "name": "Submit",
   "workflow_action_name": "Submit"
