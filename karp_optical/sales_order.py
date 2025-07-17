@@ -1,23 +1,10 @@
 import frappe
 from datetime import date
 
-def sync_store_to_customer(doc, method):
-    # Get the customer linked to the sales order
-    customer = frappe.get_doc("Customer", doc.customer)
-
-    # Set the warehouse field in the Customer doctype based on the Sales Order warehouse
-    customer.custom_store_association = doc.set_warehouse
-
-    customer.custom_last_visited = date.today()
-    
-    # Save the customer record
-    customer.save()
-
-    # Commit the changes to the database
-    frappe.db.commit()
-
 
 def gnerate_payment_entry(doc, method):
+
+    frappe.flags.ignore_permissions = True
     # Ensure the Sales Order is submitted
     if doc.docstatus != 1:
         return
@@ -69,6 +56,7 @@ def gnerate_payment_entry(doc, method):
 
 
 def gnerate_sales_invoices(doc, method):
+    frappe.flags.ignore_permissions = True
     # Ensure the Sales Order is submitted
     if doc.docstatus != 1:
         return
@@ -114,6 +102,7 @@ def gnerate_sales_invoices(doc, method):
 
 
 def gnerate_delivery_note(doc, method):
+    frappe.flags.ignore_permissions = True
     # Create a new Delivery Note document
     delivery_note = frappe.get_doc({
         "doctype": "Delivery Note",
@@ -153,7 +142,7 @@ def gnerate_delivery_note(doc, method):
 #     frappe.msgprint(f"Sales Order {sales_order.name} has been marked as Completed.")
    
 def gnerate_connected_documents(doc, method):
-   
+    frappe.flags.ignore_permissions = True
     if(doc.custom_sales_channel != "Web"):
         gnerate_payment_entry(doc, method)
         print("Generate Sales Invoice: ")
@@ -163,41 +152,3 @@ def gnerate_connected_documents(doc, method):
             gnerate_sales_invoices(doc, method)
             #mark_sales_order_as_complete(doc.name)
 
-
-
-def check_stock_availability(doc, method):
-    """
-    Validate that there is sufficient stock in the selected warehouse
-    for each item in the Sales Order before submission.
-    """
-
-    if(doc.custom_sales_channel != "Web"):
-
-        # Get the logged-in user
-        user_email = frappe.session.user
-
-        # Fetch the customer linked to this user
-        customer = frappe.get_value("Customer", {"custom_linked_user": user_email}, ["name", "custom_primary_warehouse", ], as_dict=True)
-
-        for item in doc.items:
-            check_stock_in_warehosue(item,customer. custom_primary_warehouse)
-
-def check_stock_in_warehosue(item, warehouse):
-    # Fetch the actual quantity available in the warehouse
-    actual_qty = frappe.db.get_value(
-        "Bin",
-        {"item_code": item.item_code, "warehouse": warehouse},
-        "actual_qty"
-    )
-
-    # Default actual_qty to 0 if no Bin entry exists
-    actual_qty = actual_qty or 0
-
-    # Check if available stock is less than required quantity
-    if actual_qty < item.qty:
-        frappe.throw(
-            (
-                "Insufficient stock for Item  <b>{0}</b> in Warehouse. "
-                "Available: <b>{2}</b>, Required: <b>{3}</b>. <br>Select your store as warehouse for this item and keep it ready for pickup."
-            ).format(item.item_code, warehouse, actual_qty, item.qty)
-        )
