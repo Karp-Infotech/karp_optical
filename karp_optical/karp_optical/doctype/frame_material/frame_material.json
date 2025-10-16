@@ -6,18 +6,24 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "material"
+  "material",
+  "description"
  ],
  "fields": [
   {
    "fieldname": "material",
    "fieldtype": "Data",
    "label": "Material"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Long Text",
+   "label": "Description"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-23 13:10:14.348539",
+ "modified": "2025-10-16 16:48:33.489624",
  "modified_by": "Administrator",
  "module": "Karp Optical",
  "name": "Frame Material",
