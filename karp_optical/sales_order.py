@@ -1,5 +1,6 @@
 import frappe
 from datetime import date
+from frappe.utils import nowdate
 
 
 def gnerate_payment_entry(doc, method):
@@ -152,3 +153,16 @@ def gnerate_connected_documents(doc, method):
             gnerate_sales_invoices(doc, method)
             #mark_sales_order_as_complete(doc.name)
 
+
+
+def update_last_visited(doc, method):
+    """Update the custom_last_visited field on the Customer when a Sales Order is created."""
+    if not doc.customer:
+        return
+
+    frappe.db.set_value(
+        "Customer",
+        doc.customer,
+        "custom_last_visited",
+        nowdate()
+    )

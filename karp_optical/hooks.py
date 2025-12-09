@@ -148,7 +148,8 @@ app_license = "unlicense"
 doc_events = {
     "Sales Order": {
         "on_submit": [
-             "karp_optical.sales_order.gnerate_connected_documents"
+             "karp_optical.sales_order.gnerate_connected_documents",
+             "karp_optical.sales_order.update_last_visited"
         ]
     },
     "Payment Entry": {
